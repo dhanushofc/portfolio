@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { profileData } from "@/data/profile";
 import MangaPanel from "./MangaPanel";
@@ -11,9 +12,15 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6 max-w-3xl mx-auto relative text-center">
       {/* Chapter header */}
-      <div className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-16 mx-auto w-48">
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-16 mx-auto w-48"
+      >
         SCENE 06 // FINAL_SCENE
-      </div>
+      </motion.div>
 
       <MangaPanel className="bg-ctp-crust py-12 px-8 flex flex-col items-center">
         <h2 className="font-display text-3xl font-bold mb-4 text-ctp-text">

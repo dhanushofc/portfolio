@@ -102,9 +102,9 @@
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
+  transition: background-color 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
 }
 
@@ -128,9 +128,26 @@ body {
   background-image: radial-gradient(rgba(156, 160, 176, 0.25) 1.2px, transparent 1.2px);
 }
 
-/* Custom manga outlines */
+/* Custom manga outlines with double border effect */
 .manga-border {
   border: 2px solid var(--ctp-overlay0);
+  position: relative;
+}
+
+.manga-border::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 1px solid var(--ctp-surface1);
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.4;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.manga-border:hover::before {
+  border-color: var(--ctp-mauve);
+  opacity: 0.6;
 }
 
 /* Skew transitions for panel select states */

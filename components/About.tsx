@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { profileData } from "@/data/profile";
 import MangaPanel from "./MangaPanel";
 
@@ -10,9 +11,15 @@ export default function About() {
   return (
     <section id="about" className="py-24 px-6 max-w-7xl mx-auto relative">
       {/* Chapter header */}
-      <div className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-12 w-56">
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-12 w-56"
+      >
         SCENE 02 // CHARACTER_PROFILE
-      </div>
+      </motion.div>
 
       {/* 3-Column Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
