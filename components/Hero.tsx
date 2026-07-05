@@ -44,10 +44,21 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="font-mono text-xs sm:text-sm md:text-base text-ctp-blue font-semibold mb-6 tracking-wider uppercase"
+          className="font-mono text-xs sm:text-sm md:text-base text-ctp-blue font-semibold mb-4 tracking-wider uppercase"
         >
           {roleLine}
         </motion.p>
+
+        {/* Seeking Opportunities Status Tag */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.35, duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-3 py-1 mb-8 bg-ctp-green/10 border border-ctp-green/30 rounded-full font-mono text-[10px] text-ctp-green uppercase tracking-widest shadow-sm select-none"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-ctp-green animate-pulse" />
+          <span>Seeking Full-Time Opportunities</span>
+        </motion.div>
 
         {/* Tagline */}
         <motion.p

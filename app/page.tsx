@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import TechStack from "@/components/TechStack";
+import CurrentlyLearning from "@/components/CurrentlyLearning";
 import Contact from "@/components/Contact";
 import FloatingParticles from "@/components/FloatingParticles";
 
@@ -32,6 +33,9 @@ export default function Home() {
 
         {/* Scene 5: System Stack */}
         <TechStack />
+
+        {/* Scene 5.5: System Upgrades (Currently Learning) */}
+        <CurrentlyLearning />
 
         {/* Scene 6: Contact & Credit Roll */}
         <Contact />

@@ -21,6 +21,12 @@ export interface Certification {
   badge?: string;
 }
 
+export interface LearningModule {
+  title: string;
+  description: string;
+  progress: number;
+}
+
 export interface Profile {
   name: string;
   roleLine: string;
@@ -38,6 +44,7 @@ export interface Profile {
     skills: string[];
   }[];
   certifications: Certification[];
+  currentlyLearning: LearningModule[];
   links: {
     github: string;
     linkedin: string;
@@ -178,6 +185,33 @@ export const profileData: Profile = {
       title: "Technical Symposium Participation",
       issuer: "Symposium",
       file: "/certificates/symposium_participation.jpg",
+    },
+  ],
+  currentlyLearning: [
+    {
+      title: "Agentic System Design",
+      description: "Architecting multi-agent coordinate networks, autonomous tool-use loops, and feedback loops.",
+      progress: 80,
+    },
+    {
+      title: "AI Systems Orchestration",
+      description: "Learning how to build, deploy, align, and integrate large language models into software pipelines.",
+      progress: 75,
+    },
+    {
+      title: "Prompt Engineering & Context Design",
+      description: "Designing structured contextual logic, few-shot prompting patterns, and evaluation frameworks.",
+      progress: 90,
+    },
+    {
+      title: "Data Engineering Pipelines",
+      description: "Constructing clean features stores, ETL pipelines, and high-density analytical datasets.",
+      progress: 70,
+    },
+    {
+      title: "Modern ML & AI Foundations",
+      description: "Deepening proficiency in neural architectures, computer vision pipelines, and tensor operations.",
+      progress: 85,
     },
   ],
   links: {

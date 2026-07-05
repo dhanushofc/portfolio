@@ -14,8 +14,8 @@ export default function MangaPanel({ children, className = "" }: MangaPanelProps
   const shouldReduceMotion = useReducedMotion();
 
   // Springs for smooth 3D tilt transitions
-  const rotateX = useSpring(0, { stiffness: 120, damping: 20 });
-  const rotateY = useSpring(0, { stiffness: 120, damping: 20 });
+  const rotateX = useSpring(0, { stiffness: 150, damping: 15 });
+  const rotateY = useSpring(0, { stiffness: 150, damping: 15 });
 
   // Sheen coordinates
   const sheenX = useSpring(50, { stiffness: 120, damping: 20 });
@@ -29,9 +29,9 @@ export default function MangaPanel({ children, className = "" }: MangaPanelProps
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
     
-    // Calculate rotation (Max rotation 15deg for a stronger 3D tilt)
-    rotateX.set(-y * 15);
-    rotateY.set(x * 15);
+    // Calculate rotation (Max rotation 25deg for a stronger 3D tilt)
+    rotateX.set(-y * 25);
+    rotateY.set(x * 25);
 
     // Sheen positions
     sheenX.set(((e.clientX - rect.left) / rect.width) * 100);
