@@ -8,7 +8,7 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const hasLightClass = document.documentElement.classList.contains("light");
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("portfolio-theme");
     
     if (savedTheme === "light" || (!savedTheme && hasLightClass)) {
       document.documentElement.classList.add("light");
@@ -24,18 +24,18 @@ export default function ThemeToggle() {
     if (root.classList.contains("light")) {
       root.classList.remove("light");
       setIsLight(false);
-      localStorage.setItem("theme", "dark");
+      localStorage.setItem("portfolio-theme", "dark");
     } else {
       root.classList.add("light");
       setIsLight(true);
-      localStorage.setItem("theme", "light");
+      localStorage.setItem("portfolio-theme", "light");
     }
   };
 
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-50 flex items-center justify-center p-3 bg-ctp-mantle manga-border rounded-md hover:bg-ctp-crust transition-colors duration-200 cursor-pointer shadow-lg group"
+      className="fixed top-5 right-5 z-50 flex items-center justify-center p-3 bg-ctp-surface0 text-ctp-text border border-ctp-surface1/50 rounded-full hover:shadow-lg hover:shadow-ctp-mauve/10 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
       title={isLight ? "Activate Dark Mode (Mocha)" : "Activate Light Mode (Latte)"}
     >
       {isLight ? (

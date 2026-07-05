@@ -11,7 +11,7 @@ export default function Experience() {
     <section id="experience" className="py-24 px-6 max-w-5xl mx-auto relative">
       {/* Chapter header */}
       <div className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-16 w-52">
-        CHAPTER 03 // EXPERIENCE_ARC
+        SCENE 03 // EXPERIENCE_ARC
       </div>
 
       {/* Story Arc Timeline Grid */}

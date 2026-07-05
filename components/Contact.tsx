@@ -12,7 +12,7 @@ export default function Contact() {
     <section id="contact" className="py-24 px-6 max-w-3xl mx-auto relative text-center">
       {/* Chapter header */}
       <div className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-16 mx-auto w-48">
-        CHAPTER 06 // FINAL_SCENE
+        SCENE 06 // FINAL_SCENE
       </div>
 
       <MangaPanel className="bg-ctp-crust py-12 px-8 flex flex-col items-center">

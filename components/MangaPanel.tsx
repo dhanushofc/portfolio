@@ -67,7 +67,7 @@ export default function MangaPanel({ children, className = "" }: MangaPanelProps
           rotateY,
           transformStyle: "preserve-3d",
         }}
-        className={`group relative overflow-hidden bg-ctp-mantle manga-border p-6 md:p-8 rounded-md transition-shadow duration-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.4)] h-full ${className}`}
+        className={`group relative overflow-hidden bg-ctp-surface0/60 border border-ctp-surface1/50 hover:border-ctp-mauve/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl transition-all duration-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.4)] h-full ${className}`}
       >
         {/* Corner Brackets HUD floating in 3D (translateZ 25px) */}
         <span 

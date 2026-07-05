@@ -11,7 +11,7 @@ export default function Projects() {
     <section id="projects" className="py-24 px-6 max-w-5xl mx-auto relative">
       {/* Chapter header */}
       <div className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-16 w-52">
-        CHAPTER 04 // FEATURED_PROJECTS
+        SCENE 04 // FEATURED_PROJECTS
       </div>
 
       {/* Grid of Projects */}

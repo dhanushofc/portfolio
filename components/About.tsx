@@ -11,7 +11,7 @@ export default function About() {
     <section id="about" className="py-24 px-6 max-w-7xl mx-auto relative">
       {/* Chapter header */}
       <div className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-12 w-56">
-        CHAPTER 02 // CHARACTER_PROFILE
+        SCENE 02 // CHARACTER_PROFILE
       </div>
 
       {/* 3-Column Grid Layout */}
