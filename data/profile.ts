@@ -182,7 +182,7 @@ export const profileData: Profile = {
   ],
   links: {
     github: "https://github.com/dhanushofc",
-    linkedin: "https://linkedin.com/in/dhanushginkala",
+    linkedin: "https://www.linkedin.com/in/dhanush-ginkala/",
     email: "mailto:dhanushhyd25@gmail.com",
   },
 };
