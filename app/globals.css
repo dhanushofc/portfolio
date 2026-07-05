@@ -29,7 +29,7 @@
   --ctp-mantle: #181825;
   --ctp-crust: #11111b;
 
-  --screentone-color: rgba(205, 214, 244, 0.03);
+  --screentone-color: rgba(205, 214, 244, 0.06);
   --selection: rgba(137, 180, 250, 0.2);
 }
 
@@ -62,7 +62,7 @@
   --ctp-mantle: #e6e9ef;
   --ctp-crust: #dce0e8;
 
-  --screentone-color: rgba(76, 79, 105, 0.04);
+  --screentone-color: rgba(76, 79, 105, 0.07);
   --selection: rgba(30, 102, 245, 0.15);
 }
 
@@ -212,5 +212,13 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Hover-only device support (Laptops/Desktops) to prevent mobile tap delay */
+@media (hover: hover) {
+  .theme-toggle-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(203, 166, 247, 0.15);
   }
 }

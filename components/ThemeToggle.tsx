@@ -35,7 +35,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-5 right-5 z-50 flex items-center justify-center p-3 bg-ctp-surface0 text-ctp-text border border-ctp-surface1/50 rounded-full hover:shadow-lg hover:shadow-ctp-mauve/10 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
+      className="fixed top-5 right-5 z-50 flex items-center justify-center w-12 h-12 bg-ctp-surface0 text-ctp-text border border-ctp-surface1/50 rounded-full transition-all duration-200 cursor-pointer group active:scale-95 theme-toggle-hover"
       title={isLight ? "Activate Dark Mode (Mocha)" : "Activate Light Mode (Latte)"}
     >
       {isLight ? (
