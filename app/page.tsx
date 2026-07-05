@@ -10,7 +10,7 @@ import FloatingParticles from "@/components/FloatingParticles";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-ctp-base text-ctp-text selection:bg-ctp-blue/20 overflow-x-hidden">
+    <div className="relative min-h-screen bg-ctp-base bg-screentone text-ctp-text selection:bg-ctp-blue/20 overflow-x-hidden">
       {/* Dynamic drifting particle overlays */}
       <FloatingParticles />
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { motion, useSpring, useTransform } from "framer-motion";
+import { motion, useSpring, useTransform, useReducedMotion } from "framer-motion";
 
 interface MangaPanelProps {
   children: React.ReactNode;
@@ -11,6 +11,7 @@ interface MangaPanelProps {
 export default function MangaPanel({ children, className = "" }: MangaPanelProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   // Springs for smooth 3D tilt transitions
   const rotateX = useSpring(0, { stiffness: 120, damping: 20 });
@@ -21,7 +22,7 @@ export default function MangaPanel({ children, className = "" }: MangaPanelProps
   const sheenY = useSpring(50, { stiffness: 120, damping: 20 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (shouldReduceMotion || !cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     
     // Position of cursor relative to center of card (-0.5 to 0.5)

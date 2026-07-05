@@ -9,7 +9,7 @@ export default function Hero() {
   const { name, roleLine, tagline, links } = profileData;
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center px-6 py-20 bg-screentone overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center items-center px-6 py-20 overflow-hidden">
       {/* Background ambient auric glow - slow pulse */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[35rem] h-[35rem] rounded-full bg-ctp-mauve/15 blur-[120px] animate-glow-pulse pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[30rem] h-[30rem] rounded-full bg-ctp-blue/12 blur-[100px] animate-glow-pulse pointer-events-none" />
