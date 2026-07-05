@@ -89,33 +89,8 @@ export default function About() {
                   <div className="font-sans text-[11px] text-ctp-text font-semibold leading-snug">
                     {cert.title}
                   </div>
-                  <div className="font-mono text-[9px] text-ctp-subtext0 flex items-center justify-between mt-1.5 font-light">
-                    <span>// {cert.issuer}</span>
-                    <div className="flex gap-2 shrink-0">
-                      {cert.file && (
-                        <a 
-                          href={cert.file} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="text-ctp-blue hover:text-ctp-pink transition-colors font-bold"
-                        >
-                          [PDF]
-                        </a>
-                      )}
-                      {cert.badge && (
-                        <a 
-                          href={cert.badge} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="text-ctp-pink hover:text-ctp-blue transition-colors font-bold"
-                        >
-                          [BADGE]
-                        </a>
-                      )}
-                      {!cert.file && !cert.badge && (
-                        <span className="text-ctp-overlay2 font-medium">[TEXT]</span>
-                      )}
-                    </div>
+                  <div className="font-mono text-[9px] text-ctp-subtext0 mt-1.5 font-light">
+                    // {cert.issuer}
                   </div>
                 </div>
               ))}

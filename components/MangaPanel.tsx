@@ -28,9 +28,9 @@ export default function MangaPanel({ children, className = "" }: MangaPanelProps
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
     
-    // Calculate rotation (Max rotation 12deg)
-    rotateX.set(-y * 12);
-    rotateY.set(x * 12);
+    // Calculate rotation (Max rotation 15deg for a stronger 3D tilt)
+    rotateX.set(-y * 15);
+    rotateY.set(x * 15);
 
     // Sheen positions
     sheenX.set(((e.clientX - rect.left) / rect.width) * 100);
@@ -52,45 +52,66 @@ export default function MangaPanel({ children, className = "" }: MangaPanelProps
   // Move a light radial sheen following the cursor
   const backgroundSheen = useTransform(
     [sheenX, sheenY],
-    ([x, y]) => `radial-gradient(circle at ${x}% ${y}%, rgba(203, 166, 247, 0.08) 0%, transparent 65%)`
+    ([x, y]) => `radial-gradient(circle at ${x}% ${y}%, rgba(203, 166, 247, 0.12) 0%, transparent 60%)`
   );
 
   return (
-    <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-        perspective: 1000,
-      }}
-      className={`group relative overflow-hidden bg-ctp-mantle manga-border p-6 md:p-8 rounded-md transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] ${className}`}
-    >
-      {/* Corner Brackets HUD */}
-      <span className="absolute top-2 left-2 text-[10px] font-mono text-ctp-overlay0 select-none pointer-events-none group-hover:text-ctp-blue transition-colors duration-200">┌</span>
-      <span className="absolute top-2 right-2 text-[10px] font-mono text-ctp-overlay0 select-none pointer-events-none group-hover:text-ctp-blue transition-colors duration-200">┐</span>
-      <span className="absolute bottom-2 left-2 text-[10px] font-mono text-ctp-overlay0 select-none pointer-events-none group-hover:text-ctp-blue transition-colors duration-200">└</span>
-      <span className="absolute bottom-2 right-2 text-[10px] font-mono text-ctp-overlay0 select-none pointer-events-none group-hover:text-ctp-blue transition-colors duration-200">┘</span>
+    <div style={{ perspective: 1200 }} className="h-full">
+      <motion.div
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: "preserve-3d",
+        }}
+        className={`group relative overflow-hidden bg-ctp-mantle manga-border p-6 md:p-8 rounded-md transition-shadow duration-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.4)] h-full ${className}`}
+      >
+        {/* Corner Brackets HUD floating in 3D (translateZ 25px) */}
+        <span 
+          style={{ transform: "translateZ(25px)" }}
+          className="absolute top-2 left-2 text-[10px] font-mono text-ctp-overlay0 select-none pointer-events-none group-hover:text-ctp-blue transition-colors duration-200"
+        >
+          ┌
+        </span>
+        <span 
+          style={{ transform: "translateZ(25px)" }}
+          className="absolute top-2 right-2 text-[10px] font-mono text-ctp-overlay0 select-none pointer-events-none group-hover:text-ctp-blue transition-colors duration-200"
+        >
+          ┐
+        </span>
+        <span 
+          style={{ transform: "translateZ(25px)" }}
+          className="absolute bottom-2 left-2 text-[10px] font-mono text-ctp-overlay0 select-none pointer-events-none group-hover:text-ctp-blue transition-colors duration-200"
+        >
+          └
+        </span>
+        <span 
+          style={{ transform: "translateZ(25px)" }}
+          className="absolute bottom-2 right-2 text-[10px] font-mono text-ctp-overlay0 select-none pointer-events-none group-hover:text-ctp-blue transition-colors duration-200"
+        >
+          ┘
+        </span>
 
-      {/* Halftone screentone texture overlay on hover */}
-      <div className="absolute inset-0 bg-halftone opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0" />
-      
-      {/* Dynamic Mouse-tracking Sheen Overlay */}
-      <motion.div 
-        style={{ backgroundImage: backgroundSheen }}
-        className="absolute inset-0 pointer-events-none z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      />
+        {/* Halftone screentone texture overlay on hover */}
+        <div className="absolute inset-0 bg-halftone opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0" />
+        
+        {/* Dynamic Mouse-tracking Sheen Overlay */}
+        <motion.div 
+          style={{ backgroundImage: backgroundSheen, transform: "translateZ(10px)" }}
+          className="absolute inset-0 pointer-events-none z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        />
 
-      {/* Ambient background glow border */}
-      <div className="absolute -inset-px bg-gradient-to-r from-ctp-blue via-ctp-mauve to-ctp-pink opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-sm pointer-events-none z-0" />
+        {/* Ambient background glow border */}
+        <div className="absolute -inset-px bg-gradient-to-r from-ctp-blue via-ctp-mauve to-ctp-pink opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-sm pointer-events-none z-0" />
 
-      {/* Content wrapper with translate-z for 3D card layering */}
-      <div className="relative z-10" style={{ transform: "translateZ(20px)" }}>
-        {children}
-      </div>
-    </motion.div>
+        {/* Content wrapper with translate-z for strong 3D layering (translateZ 45px) */}
+        <div className="relative z-10 h-full flex flex-col justify-between" style={{ transform: "translateZ(45px)", transformStyle: "preserve-3d" }}>
+          {children}
+        </div>
+      </motion.div>
+    </div>
   );
 }
