@@ -10,6 +10,14 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 px-6 max-w-5xl mx-auto relative">
+      {/* Outlined Japanese Katakana SFX - Baan (Dramatic Impact) */}
+      <div 
+        className="absolute right-12 top-20 font-display text-5xl font-black text-transparent select-none rotate-[-12deg] opacity-25 pointer-events-none tracking-widest hidden md:block"
+        style={{ WebkitTextStroke: "1px var(--ctp-sky)" }}
+      >
+        バーン!
+      </div>
+
       {/* Chapter header */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}

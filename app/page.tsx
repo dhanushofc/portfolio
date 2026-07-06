@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 import Hero from "@/components/Hero";
@@ -18,7 +20,7 @@ export default function Home() {
       {/* Immersive Floating Theme Controller */}
       <ThemeToggle />
 
-      <main className="w-full relative z-10">
+      <main className="w-full relative z-10 py-12">
         {/* Scene 1: Hero Scene */}
         <Hero />
 
@@ -40,6 +42,12 @@ export default function Home() {
         {/* Scene 6: Contact & Credit Roll */}
         <Contact />
       </main>
+
+      {/* Footer credits HUD layout */}
+      <footer className="w-full max-w-5xl mx-auto px-6 py-8 flex items-center justify-between relative z-50 font-mono text-[8px] text-ctp-subtext1 select-none border-t border-ctp-surface1/10">
+        <span>© 2026 DHANUSH GINKALA // SYSTEMS ARCHITECT</span>
+        <span>COMPILE: SUCCESSFUL</span>
+      </footer>
     </div>
   );
 }

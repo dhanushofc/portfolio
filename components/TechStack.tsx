@@ -10,6 +10,14 @@ export default function TechStack() {
 
   return (
     <section id="techstack" className="py-24 px-6 max-w-5xl mx-auto relative">
+      {/* Outlined Japanese Katakana SFX - Doon (System Loadout Activation) */}
+      <div 
+        className="absolute right-12 top-20 font-display text-5xl font-black text-transparent select-none rotate-[8deg] opacity-25 pointer-events-none tracking-widest hidden md:block"
+        style={{ WebkitTextStroke: "1px var(--ctp-sky)" }}
+      >
+        ドォン!
+      </div>
+
       {/* Chapter header */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}

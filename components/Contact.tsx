@@ -11,6 +11,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 px-6 max-w-3xl mx-auto relative text-center">
+      {/* Outlined Japanese Katakana SFX - Don (Final Scene Signoff) */}
+      <div 
+        className="absolute right-12 top-20 font-display text-5xl font-black text-transparent select-none rotate-[14deg] opacity-25 pointer-events-none tracking-widest hidden md:block"
+        style={{ WebkitTextStroke: "1px var(--ctp-sky)" }}
+      >
+        ドン!
+      </div>
+
       {/* Chapter header */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}

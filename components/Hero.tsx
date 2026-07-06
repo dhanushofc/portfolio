@@ -16,11 +16,11 @@ export default function Hero() {
 
       {/* Main Container */}
       <div className="max-w-4xl w-full text-center z-10 flex flex-col items-center">
-        {/* Monospace Scene Header */}
+        {/* Monospace Scene Header - enlarged and bolded */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="font-mono text-xs uppercase tracking-widest text-ctp-mauve border-b border-ctp-overlay0 pb-2 mb-10 w-48 text-center"
         >
           SCENE 01 // INTRO_SEQ
@@ -28,11 +28,18 @@ export default function Hero() {
 
         {/* Manga-inspired Name Panel Frame */}
         <motion.div
-          initial={{ scale: 0.96, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.7, ease: "easeOut" }}
           className="relative px-8 py-5 mb-8 manga-border bg-ctp-crust/40 rounded-md skew-x-[-1.5deg] shadow-[6px_6px_0px_var(--ctp-overlay0)]"
         >
+          {/* Outlined Japanese Katakana SFX - Gogogo (Rumble) */}
+          <div 
+            className="absolute -top-12 -right-8 font-display text-5xl sm:text-6xl font-black text-transparent select-none rotate-[15deg] opacity-25 pointer-events-none tracking-widest hidden sm:block"
+            style={{ WebkitTextStroke: "1px var(--ctp-sky)" }}
+          >
+            ゴゴゴ...
+          </div>
           <div className="absolute inset-0 bg-halftone opacity-10 rounded-md pointer-events-none" />
           <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ctp-text">
             {name}
@@ -41,9 +48,9 @@ export default function Hero() {
 
         {/* Subtitle / Role Line */}
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.6, ease: "easeOut" }}
           className="font-mono text-xs sm:text-sm md:text-base text-ctp-blue font-semibold mb-4 tracking-wider uppercase"
         >
           {roleLine}
@@ -53,7 +60,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.35, duration: 0.5 }}
+          transition={{ delay: 0.35, duration: 0.5, ease: "easeOut" }}
           className="inline-flex items-center gap-2 px-3 py-1 mb-8 bg-ctp-green/10 border border-ctp-green/30 rounded-full font-mono text-[10px] text-ctp-green uppercase tracking-widest shadow-sm select-none"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-ctp-green animate-pulse" />
@@ -62,9 +69,9 @@ export default function Hero() {
 
         {/* Tagline */}
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.42, duration: 0.6, ease: "easeOut" }}
           className="font-sans text-lg sm:text-xl md:text-2xl text-ctp-subtext0 max-w-2xl mb-12 leading-relaxed font-light"
         >
           {tagline}
@@ -74,7 +81,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
+          transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
           className="flex flex-wrap justify-center gap-4 mb-16"
         >
           <a

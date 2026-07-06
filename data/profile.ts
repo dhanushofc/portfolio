@@ -86,6 +86,27 @@ export const profileData: Profile = {
   ],
   projects: [
     {
+      title: "Climate Stress Testing Simulator",
+      subtitle: "Macro-Financial Risk Arc",
+      description: "Assess financial stability and stress-test banking portfolios against global macro-climate risk scenarios using predictive modelling.",
+      tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
+      link: "https://github.com/dhanushofc/Macro-Climate-Financial-Risk-Stress-Testing-Simulator",
+    },
+    {
+      title: "Policy Trend Analysis Engine",
+      subtitle: "Consumer Ingestion Arc",
+      description: "Data pipeline engine that ingests, cleans, and tracks trends in consumer complaint streams against dynamic policy inputs.",
+      tech: ["Python", "Pandas", "NLTK", "Pipelines"],
+      link: "https://github.com/dhanushofc/Dynamic-Policy-Input-Trend-Analysis-Engine-for-Consumer-Complaints",
+    },
+    {
+      title: "Financial Anomaly Detection",
+      subtitle: "Predictive Time-Series Arc",
+      description: "Automated detection of time-series anomalies and predictive forecasting in transaction data streams using statistical modeling.",
+      tech: ["Python", "Scikit-learn", "NumPy", "Time-Series"],
+      link: "https://github.com/dhanushofc/Automated-Financial-Anomaly-Detection-Trend-Forecasting",
+    },
+    {
       title: "SatelliteGAN",
       subtitle: "Ocean Forecasting Arc",
       description: "SST forecasting over the Arabian Sea using ConvLSTM, Chronos, Granite models, and NetCDF4 oceanographic data.",
@@ -144,14 +165,8 @@ export const profileData: Profile = {
       badge: "/certificates/aws_cloud_foundations.png",
     },
     {
-      title: "INCOIS Research Internship - SST Forecasting (Part 1)",
+      title: "INCOIS Research Internship — SST Forecasting (Phase I & II)",
       issuer: "INCOIS",
-      file: "/certificates/dhanush_incois_1.pdf",
-    },
-    {
-      title: "INCOIS Research Internship - SST Forecasting (Part 2)",
-      issuer: "INCOIS",
-      file: "/certificates/dhanush_incois_2.pdf",
     },
     {
       title: "Skillbanc Contributor Internship",
@@ -185,6 +200,10 @@ export const profileData: Profile = {
       title: "Technical Symposium Participation",
       issuer: "Symposium",
       file: "/certificates/symposium_participation.jpg",
+    },
+    {
+      title: "RBI National Quiz Participation",
+      issuer: "Reserve Bank of India",
     },
   ],
   currentlyLearning: [
